@@ -1,11 +1,14 @@
-def ordering(list):
-    for i in range (len(list)):
-        for j in range (len(list)):
-            if list[i] < list[j]:
-                temp = list[j]
-                list[j] = list[i]
-                list[i] = temp
-            
+#list ordering
+
+def selection(list):
+    for k in range (len(list)):
+        kmin = k
+        for j in range (k+1,len(list)):
+            if(int(list[kmin]) > int(list[j])):
+                kmin = j
+        if kmin != k:
+            list[k],list[kmin] = list[kmin],list[k]
+
 def createList():
     list = []
     k = input("insert the dimension of the list: ")
@@ -14,10 +17,9 @@ def createList():
     return list 
 
 
-def main():
-    list = createList()
+def main(list = createList()):
     print(f"la lista non invertita e' {list}")
-    ordering(list)
+    selection(list)
     print(f"la lista invertita e' {list}")
 
 
