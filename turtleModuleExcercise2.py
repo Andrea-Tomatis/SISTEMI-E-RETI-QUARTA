@@ -1,3 +1,11 @@
+'''
+Author: Andrea Tomatis
+
+Date: 11/30/2020
+
+control the turtle cursor with keyboard arrows
+'''
+
 import turtle
 
 robot = turtle.Turtle()
