@@ -3,8 +3,8 @@ def readLista():
     playlist = []
 
     for line in file:
-        elements = line.split(",")
-        canzone = {"id" : elements[0], "title" : elements[1], "author" : elements[2][:-1]}
+        riga_canzone = line.split(",")
+        canzone = {"id" : riga_canzone[0], "title" : riga_canzone[1], "author" : riga_canzone[2][:-1]}
         playlist.append(canzone)
     file.close()
     return playlist    
@@ -14,9 +14,9 @@ def readDict():
     playlist = {}
 
     for line in file:
-        elements = line.split(",")
-        canzone = {"title" : elements[1], "author" : elements[2][:-1]}
-        playlist[elements[0]] = canzone
+        riga_canzone = line.split(",")
+        canzone = {"title" : riga_canzone[1], "author" : riga_canzone[2][:-1]}
+        playlist[riga_canzone[0]] = canzone
     file.close()
     return playlist
 
@@ -25,9 +25,9 @@ def readDict():
 playlist = readLista()
 playlist2 = readDict()
 
-for i,element in enumerate(playlist2):
-    print(f"{i}: {playlist2[element]}")
+for i,canzone in enumerate(playlist2):
+    print(f"{i}: {playlist2[canzone]}")
 
-for element in playlist:
-    print(element)
+for canzone in playlist:
+    print(canzone)
 
