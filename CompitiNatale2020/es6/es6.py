@@ -25,7 +25,10 @@ def leggiFile(nomefile):
 			anno = int(stringa[1])
 		
 		if int(stringa[1]) != anno:
-			clima[anno] = k/ndati
+			try:
+			    clima[anno] = k/ndati
+			except ZeroDivisionError:
+			    clima[anno] = 0.0
 			k = 0
 			ndati = 0
 			anno = int(stringa[1])
