@@ -19,7 +19,7 @@ def leggiFile(nomefile):
 		stringa = line.split(',')
 		
 		if stringa[0] == "Source":
-			continue;
+			continue
 		
 		if anno == 0:
 			anno = int(stringa[1])
